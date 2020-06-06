@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Home</title>
+    <script type='text/javascript'>
+        function validation()
+        {
+            var usrname = document.getElementById('input1');
+            var psswd = document.getElementById('psswd');
+
+            if (usrname.value.trim()=='' || usrname.value.trim().length<5)
+            {
+                alert('Blank or Too short Username');
+                usrname.style.border='solid 2px deepskyblue';
+                document.getElementById('lbuser').style.visibility='visible';
+                return false;
+            }
+            else if (psswd.value.trim()=='' || psswd.value.trim().length<5)
+            {
+                alert('Incorrect or Too Short Password');
+                psswd.style.border='solid 2px deepskyblue';
+                document.getElementById('plb').style.visibility='visible'
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+
+    <h1 id='h1'> Welcome</h1>
+    <form id='form1' onsubmit="return validation();" action='welcome.html'>
+        <input id='input1' placeholder='Enter Username' required />
+        <label id='lbuser' style="color:rgb(255, 0, 212); visibility:hidden">Invalid Username</label>
+        <br><br>
+        <input id='psswd' type="password" placeholder='Password' required />
+        <label id='plb' style="color:rgb(255, 0, 212); visibility:hidden">Invalid Password</label>
+        <br> <br>
+        <button type="submit">Click Here</button>
+    </form>
+
+</body>
+
+</html>

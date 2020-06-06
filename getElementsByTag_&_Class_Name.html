@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Home</title>
+    <script type='text/javascript'>
+    function func1()
+    {
+        var str = document.getElementsByTagName('p');
+        alert(str[0].innerHTML);
+        str[1].style.fontSize='200%';
+        for(var i=0; i<str.length; i++)
+        {
+            str[i].style.color='green';
+            str[i].style.fontStyle = 'italic';
+            str[i].style.fontWeight='bold';
+        }
+    }
+
+    function func2()
+    {
+        var str = document.getElementsByClassName('cls');
+        alert(str[0].innerHTML);
+        str[str.length-1].style.fontSize = '150%';
+        for (var i = 0; i < str.length; i++)
+        {
+            str[i].style.color = 'green';
+            str[i].style.fontStyle = 'italic';
+            str[i].style.fontWeight = 'bold';
+        }
+    }
+
+    function func4()
+    {
+        var image = document.getElementById('img');
+        img.src='imgs/image_2.jpg';
+    }
+
+    function func5()
+    {
+        document.getElementById('img').src='imgs/image_1.jpg';
+    }
+    </script>
+</head>
+
+<body>
+    <h1 class="cls">Welcome</h1>
+    <p class="cls"> This is pargaraph 1</p>
+    <p> This is pargaraph 2</p>
+    <p class="cls"> This is pargaraph 3</p>
+    <p> This is pargaraph 4</p>
+    <a class="cls" href='#'> google.com</a>
+    <br>
+    <br>
+    <button onclick="func1()">Change Tag Style</button>
+    <button onclick="func2()">Change Class Style</button>
+
+    <br> <br>
+    <img id='img' onmouseover="func4()" onmouseout="func5()" src='imgs/image_1.jpg' width="50%">
+
+    
+</body>
+
+</html>

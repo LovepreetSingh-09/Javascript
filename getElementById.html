@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Home</title>
+    <script type='text/javascript'>
+    function func()
+    {
+        var usr = document.getElementById('input1').value;
+        var pss = document.getElementById('psswd').value;
+        if (usr==pss)
+        {
+            alert('Successful Login');
+            document.getElementById('h1').innerHTML='You are Logged In';
+        }
+        else
+        {
+            alert('Username and Password are not Same');
+        }
+    }
+
+    function func2()
+    {
+        var str = document.getElementById('select');
+        alert(str.options[select.selectedIndex].value);
+    }
+
+    function func3()
+    {
+        var str1 = document.getElementById('rd1');
+        var str2 = document.getElementById('rd2');
+        if (str1.checked==true)
+            alert(str1.value);
+        else if (str2.checked==true) 
+            alert(str2.value);
+        else 
+            alert('No Option selected');
+    }
+
+    </script>
+</head>
+
+<body>
+    <h1 id='h1'> Welcome</h1>
+    <input id='input1' placeholder='Enter Username'>
+    <br><br>
+    <input id='psswd' type="password">
+    <br> <br>
+    <button onclick="func()">Click Here</button>
+
+
+    <br>
+    <br>
+    <select id='select'>
+        <option value='audi'>Audi</option>
+        <option value='tesla'>Tesla</option>
+        <option value='volkswagen'>VW</option>
+    </select>
+    <button onclick='func2()'> Click here</button>
+
+
+    <br><br>
+    <input id='rd1' name='radiobutton1' type="radio" value='hi'>Hi Im here</input>
+    <input id='rd2' name='radiobutton1' type="radio" value="hello">How are you?</input>
+    <button onclick='func3()'>Click Me</button>
+
+</body>
+
+</html>

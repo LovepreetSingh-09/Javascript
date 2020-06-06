@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Home</title>
+    <script type='text/javascript'>
+    
+    var Id = 0;
+    var sec=0;
+
+
+    function fade_stop()
+    {
+        window.clearInterval(Id);
+        sec=0;
+        Id = window.setInterval(fade_out, 200);
+    }
+
+    function fade_out()
+    {
+        var img = document.getElementById('img1');
+        opacity = window.getComputedStyle(img).getPropertyValue('opacity');
+        if (opacity>0)
+        {
+            opacity-=0.05;
+            sec++;
+            img.style.opacity=opacity;
+            document.getElementById('sec').innerHTML = sec;
+
+        }
+        else
+        {
+            window.clearInterval(Id)
+        }
+
+    }
+
+    function fade_start()
+    {
+        sec=0;
+        window.clearInterval(Id);
+        Id = window.setInterval(fade_in, 200);
+    }
+
+    function fade_in()
+    {
+        var img = document.getElementById('img1');
+        var opacity = window.getComputedStyle(img).getPropertyValue('opacity');
+        if (opacity < 1)
+        {
+            opacity = Number(opacity) + 0.05;
+            sec++;
+            img.style.opacity=opacity;
+            document.getElementById('sec').innerHTML = sec;
+            console.log(opacity);
+        }
+        else
+        {
+            window.clearInterval(Id);
+        }
+    }
+
+
+    var width=100;
+    function zoom_in()
+    {
+        window.clearInterval(Id);
+        Id = window.setInterval(width_add, 20);
+    }
+    function width_add()
+    {
+        width = width + 5;
+        console.log(width);
+        document.getElementById('img2').style.width=width;
+        if (width==200)
+        {
+            window.clearInterval(Id);
+        }
+    }
+    
+    function zoom_out()
+    {
+        window.clearInterval(Id);
+        Id = window.setInterval(width_reduce, 20);
+    }
+    function width_reduce()
+    {
+        if (width>100)
+        {
+            width = width - 5;
+            console.log(document.getElementById('img2').style.width);
+            document.getElementById('img2').style.width=width;
+        }
+        else
+        {
+            window.clearInterval(Id);
+        }
+    }
+
+    </script>
+</head>
+
+<body>
+    <button id='bt2' onclick='fade_stop();'>Fade Out</button>
+    <br><br>
+    <img id='img1' src='imgs/image_1.jpg' width="50%">
+    <h6 id='sec'></h6>
+    <button id=bt1 onclick="fade_start();"> Fade In</button>
+
+    <br><br><br><br>
+    <img id='img2' onmouseover='zoom_in();' onmouseout="zoom_out();" src="imgs/image_2.jpg" width=100>
+
+</body>
+
+</html>

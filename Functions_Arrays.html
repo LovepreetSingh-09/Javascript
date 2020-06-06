@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script type='text/javascript'>
+    function  remainder(a, b) 
+    {
+        var c = 0.2;
+        if (a>b)
+        {
+            return a%b + c;
+        }
+        if (b>a) 
+        {
+            return b%a  + c;
+        } 
+        else 
+        {
+            return 0;
+        }
+    }
+    var x = 15;
+    var y = 5;
+    result = remainder(x, y)
+    document.write('<h2>'+result+'</h2>')
+
+
+    arr = ['tesla','audi','VW'];
+    document.write(arr.length+'</br>');
+    for(var i=0; i<arr.length; i++)
+    {
+        document.write(arr[i], '<br>');
+    }
+
+
+    document.write('<br>');
+    arr2 = new Array(1, 'hello', 3, 'Hi')
+    for (var i = 0; i < arr2.length; i++)
+     {
+        document.write(arr2[i], '<br>');
+    }
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

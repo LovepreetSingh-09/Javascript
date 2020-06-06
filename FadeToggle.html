@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Welcome</title>
+    <link rel='stylesheet' type='text/css' href='style.css'>
+</head>
+
+<body>
+    <h1>Welcome Here</h1>
+    <h2> You are logged in</h2>
+    <div class="p1">
+      <p>Tis is the 1 para</p>
+    </div>
+    <div class="p1">
+        <p>Tis is the 2 para</p>
+    </div>
+    <div class="p1">
+        <p>Tis is the 3 para</p>
+    </div>
+    <div class="p1">
+        <p>Tis is the 4 para</p>
+    </div>
+    <a href="#" id='anc'>google.com</a>
+    <ul class='li'>
+        <li>hello</li>
+        <li>hi</li>
+        <li>how</li>
+        <li>are</li>
+        <li>you ?</li>
+    </ul>
+    <button id='bt' onclick="fade()">Click here to Fade</button>
+
+
+</body>
+<script type='text/javascript' src='js/jquery.js'> </script>
+
+<script>
+function fade()
+{
+    $('.p1:first').fadeToggle(200);
+    $('.li :even').fadeToggle(500);
+}
+
+</script>
+
+</html>

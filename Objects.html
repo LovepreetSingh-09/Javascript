@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script type='text/javascript'>
+    var car = {
+        brand :'tesla',
+        model :'Model S',
+        price :45000,
+        show : function(version)
+        {
+            document.write('<br><h3>This car is '+ car.model +' '+version+'</h3');
+        }
+    }
+
+    document.write('<br><h2>' + car.brand + '</h2>');
+    car.show('P100D');
+
+    function cars(brand, model, price)
+    {
+        this.brand_ = brand;
+        this.model = model;
+        this.price = price;
+        this.show = function(version)
+        {
+            document.write('<br><h3>This car is '+ this.model + ' ' + version + '</h3');
+        }
+    }
+    car1 = new cars('audi', 'rover', 25000);
+    document.write('<br><br><h1>'+car1.brand_+'</h1>');
+    car1.show(100);
+    car1.quality='high';
+    document.write('<br><br><h1>' + car1.quality + '</h1>');
+    var str = new String('abc')
+    document.write('<br><br><h1>' + typeof(str) + '</h1>');
+    var str2 = 'abc';
+    document.write('<br><br><h1>' + typeof(str2)+ '</h1>');
+
+
+   
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
