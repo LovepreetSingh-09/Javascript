@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Welcome</title>
+    <link rel='stylesheet' type='text/css' href='style.css'>
+</head>
+
+<body>
+    <h1>Welcome Here</h1>
+    <h2> You are logged in</h2>
+    <div class="p1">
+        <p>Tis is the 1 para</p>
+    </div>
+    <div class="p1">
+        <p>Tis is the 2 para</p>
+    </div>
+    <div class="p1">
+        <p>Tis is the 3 para</p>
+    </div>
+    <div class="p1">
+        <p>Tis is the 4 para</p>
+    </div>
+    <a href="#" id='anc'>google.com</a>
+    <ul class='li'>
+        <li>hello</li>
+        <li>hi</li>
+        <li>how</li>
+        <li>are</li>
+        <li>you ?</li>
+    </ul>
+    <button id='bt'>Click here</button>
+<br><br>
+
+<div id="box">
+    <h2>Cube</h2>
+</div>
+<br>
+<button id="bt2">Click TO Animate</button>
+
+</body>
+<script type='text/javascript' src='js/jquery.js'> </script>
+
+<script>
+    $(document).ready(function()
+        {
+            $('#bt').dblclick(slidetg);
+
+            function slidetg(){
+                $('.p1').slideToggle(500);
+                $('.li').toggle(5000);
+            }
+            
+            $('h1').hover(width_add);
+            function width_add()
+            {
+                document.getElementById('h1').style.fontSize='200%';
+            }
+
+
+            $('#bt2').click(animate);
+
+            function animate()
+            {
+                $("#box").animate({
+                    left: '50px',
+                    height: '100px',
+                    width:  '100px',
+                    background_color: 'yellow',
+                }, 500)
+            }
+        }
+    )
+
+</script>
+
+</html>
