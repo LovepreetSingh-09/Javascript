@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Welcome</title>
+    <link rel='stylesheet' type='text/css' href='style.css'>
+</head>
+
+<body>
+    <h1>Welcome Here</h1>
+    <h2> You are logged in</h2>
+    <div class="p1">
+        <p>Tis is the 1 para</p>
+    </div>
+    <br>
+    <br>
+    <button id='bt1'>Append</button>
+    <button id='bt2'>After</button>
+    <button id='bt3'>Prepend</button>
+    <button id='bt4'>Before</button>
+    <button id='bt5'>Remove</button>
+    <button id='bt6'>Empty</button>
+    <br><br>
+
+
+
+
+</body>
+<script type='text/javascript' src='js/jquery.js'> </script>
+
+<script>
+    $(document).ready(function () {
+
+        $('#bt1').click(function () {
+            $('.p1').append('Para added inside at the end');            
+        });
+
+        $('#bt2').click(function () {
+            $('.p1').after('Para added outside at the end');
+        });
+
+        $('#bt3').click(function () {
+            $('.p1').prepend('Para added inside at the begining');
+        });
+
+        $('#bt4').click(function () {
+            $('.p1').before('Para added ouside before the element');
+        });
+
+        $('#bt5').click(function () {
+            $('.p1').remove();
+        });
+
+        $('#bt6').click(function () {
+            $('.p1').empty();
+        });
+    });
+
+
+</script>
+
+</html>
