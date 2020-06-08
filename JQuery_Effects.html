@@ -22,7 +22,7 @@
     <div class="p1">
         <p>Tis is the 4 para</p>
     </div>
-    <a href="#" id='anc'>google.com</a>
+    <a href="#" id='anc' value='google'>google.com</a>
     <ul class='li'>
         <li>hello</li>
         <li>hi</li>
@@ -31,47 +31,62 @@
         <li>you ?</li>
     </ul>
     <button id='bt'>Click here</button>
-<br><br>
+    <button id='bt3'>Click to change</button>
+    <br><br>
 
-<div id="box">
-    <h2>Cube</h2>
-</div>
-<br>
-<button id="bt2">Click TO Animate</button>
+    <div id="box">
+        <h2>Cube</h2>
+    </div>
+    <br>
+    <button id="bt2">Click TO Animate</button>
+
 
 </body>
 <script type='text/javascript' src='js/jquery.js'> </script>
 
 <script>
-    $(document).ready(function()
-        {
-            $('#bt').dblclick(slidetg);
+    $(document).ready(function () {
 
-            function slidetg(){
-                $('.p1').slideToggle(500);
-                $('.li').toggle(5000);
-            }
-            
-            $('h1').hover(width_add);
-            function width_add()
-            {
-                document.getElementById('h1').style.fontSize='200%';
-            }
+        $('#bt').click(function () {
+            $('.p1:first').slideToggle(500, function () {
+                alert('slidetg happening')
+            });
+        });
 
-
-            $('#bt2').click(animate);
-
-            function animate()
-            {
-                $("#box").animate({
-                    left: '50px',
-                    height: '100px',
-                    width:  '100px',
-                    background_color: 'yellow',
-                }, 500)
-            }
+        function slidetg() {
+            $('.p1').slideToggle(500);
+            $('.li').toggle(500);
         }
-    )
+
+        $('h1').hover(width_reduce, width_add);
+        function width_add() {
+            $('h1').fadeIn(2000);
+        }
+        function width_reduce() {
+            $('h1').fadeOut(2000);
+        }
+
+        $('#bt2').click(function () {
+            $("#box").animate({
+                left: '150px',
+                height: '100px',
+                width: '100px',
+                opacity: '0.2',
+            }, 500, function () {
+                alert('slidetg happening')
+            });
+        });
+
+        $('#bt3').click(function(){
+            $('.p1:first').html('<p>This is Changed</p>');
+            $('.p1').css('border', 'solid 2px yellow');
+            $('.p1:last').text('Last Para changed');
+            $('a').attr('value', 'gmail');
+            alert($('a').attr('value'));
+            
+        })
+    });
+
 
 </script>
 
