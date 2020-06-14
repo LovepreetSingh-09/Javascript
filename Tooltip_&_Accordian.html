@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Welcome</title>
+    <link rel='stylesheet' type='text/css' href='jqueryui/jquery-ui.css'>
+    <link rel='stylesheet' type='text/css' href='jqueryui/jquery-ui.structure.css'>
+    <link rel='stylesheet' type='text/css' href='jqueryui/jquery-ui.theme.css'>
+    <link rel='stylesheet' type='text/css' href='style.css'>
+
+</head>
+
+<body>
+    <h1>Welcome</h1>
+    <div id ='div1'>
+        <h4>This is the <i>image</i></h4>
+        <img id='img' src="imgs/image_1.jpg" width='200px' title='Beautiful Image'>
+    </div>
+    <br>
+    <button id='btn'>Click For MessageBox</button>
+
+
+    <br> <br>
+    <div id='div2' title='message-box'>
+        <h4>Message Box</h4>
+        <img src='imgs/image_2.jpg' width='200px'>
+    </div>
+
+    
+    <br> <br> <br>
+    <div id='mydiv'>
+        <h3>Para 1</h3>
+        <p> This is the first para</p>
+
+        <h3>Para 2</h3>
+        <p> This is the second para
+            <br> It includes more text than any other para
+            <br> It affects the heigthStyle attribute of the accordion method of jqueryui
+        </p>
+
+        <h3>Para 3</h3>
+        <p> This is the third para</p>
+
+        <h3>Para 4</h3>
+        <p> This is the fourth para</p>
+    </div>
+
+</body>
+
+
+<script type='text/javascript' src='js/jquery.js'> </script>
+<script type='text/javascript' src="jqueryui/jquery-ui.js"></script>
+
+<script>
+
+    $('#img').tooltip({
+        track : true,
+        content : 'This is a beautiful Image',
+        show : {effect:'bounce', duration: 2000}, /* pulsate highlight explode */ 
+        hide : {effect : 'explode', duration: 1000}
+    });
+
+
+    $('#mydiv').accordion({
+        collapsible : true,
+        event : 'click',
+        animate : 500,
+        active : 1,
+        heightStyle : true,
+        icons : {header:'ui-icon-plus', activeHeader:'ui-icon-minus'}
+    });
+
+
+    $('#btn').click(function(){
+
+        $('#div2').dialog({
+            title:'Custom Message Box',
+            draggable : false,
+            resizable : true,
+            height : 300,
+            width : 300,
+            modal : true,  //To prevent the action on the web page//
+            buttons : 
+            [
+                {
+                    text: 'Close',
+                    icon: 'ui-icon-heart',
+                    click: function () {
+                        $(this).dialog('close')
+                    }
+
+                },
+                {
+                    text: 'OK',
+                    icon: 'ui-icon-heart',
+                    click: function () {
+                        alert('OK')
+                    }
+                }
+            ]
+        });
+
+    })
+</script>
+
+</html>
+
