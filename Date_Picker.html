@@ -15,8 +15,17 @@
     <h1>Welcome</h1>
     <div id='mydiv'>
         <input id='myinp' type="text" placeholder="Choose date" >
+        <br>
+        <br>
+        <button id='btn'> Change No. of Months</button>
     </div>
 
+    <br>
+    <br>
+    <div id=div1>
+        <label> <b> Enter Your Favourite City</b></label>
+        <input type="text" name='' id='citytextbox'>
+    </div>
 </body>
 
 
@@ -35,6 +44,25 @@
         minDate : new Date(2019, 10, 09),
         maxDate : new Date(2020, 06, 29)
     });
+
+    $('#btn').click(function(){
+        var mn = $('#myinp').datepicker('option', 'numberOfMonths');
+        if (mn == 1){
+            $('#myinp').datepicker('option', 'numberOfMonths', 3);
+        }
+        
+    });
+
+
+    var mycities = ['mumbai', 'delhi', 'Surrey', 'vancouver', 'Toronto', 'san Deigo']
+    $('#citytextbox').autocomplete(
+        {source : mycities},
+        {
+            autoFocus : true,
+            delay : 0,
+            minLength : 1
+        }
+    )
 
 
 </script>
