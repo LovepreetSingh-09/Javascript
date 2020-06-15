@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Welcome</title>
+    <link rel='stylesheet' type='text/css' href='jqueryui/jquery-ui.css'>
+    <link rel='stylesheet' type='text/css' href='jqueryui/jquery-ui.structure.css'>
+    <link rel='stylesheet' type='text/css' href='jqueryui/jquery-ui.theme.css'>
+    <link rel='stylesheet' type='text/css' href='style.css'>
+
+</head>
+
+<body>
+    <h1>Welcome</h1>
+    <div id='main' style="border: 5px solid green;">
+        <div class='cube' style="width: 50px; height: 50px; background-color: aqua; padding: 50px; margin:20px">
+            Cube_1
+        </div>
+
+        <br>
+        <br>
+        <div class='cube' style="width: 50px; height: 50px; background-color: aqua; padding: 50px; margin: 20px">
+            CUBE_2
+        </div>
+    </div>
+</body>
+
+
+<script type='text/javascript' src='js/jquery.js'> </script>
+<script type='text/javascript' src="jqueryui/jquery-ui.js"></script>
+
+<script>
+
+    $('.cube').draggable({
+        // axis:'x',//
+        containment: 'document', // 'parent'//
+        cursor : 'grabbing',
+        opacity : 0.5,
+        //grid : [250, 250],//
+        snap : true,
+        snapTolerance : 50,
+    });
+
+
+</script>
+
+</html>
